@@ -1,3 +1,61 @@
 html {
-    background-color: aqua;
+    background-color: rgb(62, 92, 126);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    padding: 30px;
+    border: 1px solid green;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px rgb(189, 171, 123) solid;
+    text-align: center;
+    font-family: Montserrat;
+    padding: 50px;
+    width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10%;
+}
+
+h4 {
+    color: rgb(175, 166, 158);
+    font-size: 2em;
+}
+
+p {
+    background-color: rgba(124, 124, 189, 0.281);
+    padding: 25px;
+    border-radius: 20%;
+}
+
+
+.dogTable {
+    font-size: 0.9em;
+    
+    border-radius: 5%;
+}
+
+table {
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+    
+
+}
+
+td {
+    width: 100px;
+    border: 1px rgb(175, 166, 158) solid;
+}
+
+#stats {
+    border: none;
+    font-weight: 700;
 }
