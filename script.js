@@ -6,12 +6,14 @@ const dogArray = [
         size: "medium",
         color: "brown",
         age: 2,
+        pronoun: "He",
         needs: {
             toys: [" bow-tie", " ball "],
             shelter: "sunroom",
             medication: true,
             cupsOfFood: 1.5,
-        }
+        },
+        imgFile: '/pics/boxer.jpg',
     },
     {
         id: 1,
@@ -20,12 +22,14 @@ const dogArray = [
         size: "small",
         color: "green",
         age: 3,
+        pronoun: "He",
         needs: {
             toys: [" underpants", " squeaker "],
             shelter: "rescue shelter",
             medication: true,
             cupsOfFood: 1,
-        }
+        },
+        imgFile: '/pics/terrier.jpg',
     },
     {
         id: 2,
@@ -34,12 +38,14 @@ const dogArray = [
         size: "large",
         color: "black",
         age: 2,
+        pronoun: "She",
         needs: {
             toys: [" bone", " squeaker", " frisbee"],
             shelter: "house",
             medication: false,
             cupsOfFood: 2,
-        }
+        },
+        imgFile: '/pics/poodle.jpg',
     },
     {
         id: 3,
@@ -48,12 +54,14 @@ const dogArray = [
         size: "big",
         color: "black",
         age: 1,
+        pronoun: "He",
         needs: {
             toys: [" bone", " shoes", " hats"],
             shelter: "house",
             medication: false,
             cupsOfFood: 3,
-        }
+        },
+        imgFile: '/pics/lab.jpg',
     },
     {
         id: 4,
@@ -62,12 +70,14 @@ const dogArray = [
         size: "huge",
         color: "brown",
         age: 6,
+        pronoun: "He",
         needs: {
             toys: [" small children", " large children", " squirrels", " squeaker"],
             shelter: "outside",
             medication: false,
             cupsOfFood: 6,
-        }
+        },
+        imgFile: 'pics/bullMastiff.jpg',
     },
     {
         id: 5,
@@ -76,12 +86,14 @@ const dogArray = [
         size: "medium",
         color: "yellow",
         age: 7,
+        pronoun: "He",
         needs: {
             toys: [" fat rat", " squeaker", " slippers"],
             shelter: "wherever she wants",
             medication: false,
             cupsOfFood: 2.5,
-        }
+        },
+        imgFile: '/pics/bullTerrier.jpg',
     },
     {
         id: 6,
@@ -90,12 +102,14 @@ const dogArray = [
         size: "medium",
         color: "white",
         age: 0.5,
+        pronoun: "She",
         needs: {
             toys: [" bunny", " sticks", " bathtub"],
             shelter: "kennel",
             medication: false,
             cupsOfFood: 2,
-        }
+        },
+        imgFile: '/pics/americanEskimo.jpg',
     },
     {
         id: 7,
@@ -104,12 +118,14 @@ const dogArray = [
         size: "small",
         color: "black triad",
         age: 1,
+        pronoun: "She",
         needs: {
             toys: [" biscuit", " kong"],
             shelter: "house",
             medication: false,
             cupsOfFood: 2,
-        }
+        },
+        imgFile: '/pics/pomsky.jpg',
     },
     {
         id: 8,
@@ -118,12 +134,14 @@ const dogArray = [
         size: "medium",
         color: "yellow",
         age: 18,
+        pronoun: "She",
         needs: {
             toys: [" baby doll", " rubber bone"],
             shelter: "den",
             medication: true,
             cupsOfFood: 3,
-        }
+        },
+        imgFile: '/pics/goldenRetriever.jpg',
     },
     {
         id: 9,
@@ -132,12 +150,14 @@ const dogArray = [
         size: "large",
         color: "black",
         age: 6,
+        pronoun: "He",
         needs: {
             toys: [" bone", " stick"],
             shelter: "doghouse",
             medication: true,
             cupsOfFood: 5,
-        }
+        },
+        imgFile: '/pics/germanShepherd.jpg ',
     },
     {
         id: 10,
@@ -146,12 +166,14 @@ const dogArray = [
         size: "small",
         color: "black and white",
         age: 4,
+        pronoun: "He",
         needs: {
             toys: [],
             shelter: "streets",
             medication: false,
             cupsOfFood: 0,
-        }
+        },
+        imgFile: '/pics/schnauzer-grass.jpg',
     },
     {
         id: 11,
@@ -160,12 +182,14 @@ const dogArray = [
         size: "medium",
         color: "golden",
         age: 3,
+        pronoun: "She",
         needs: {
             toys: ["does not like things"],
             shelter: "???",
             medication: null,
             cupsOfFood: "",
-        }
+        },
+        imgFile: '/pics/goldenRetriever2.jpg',
     }
 ];
 
@@ -185,12 +209,15 @@ for (var counter = 0; counter < dogArray.length; counter++) {
     var dogColor = dogOfMoment.color;
     var dogAge = dogOfMoment.age;
 
+    var dogUrl = dogOfMoment.imgFile;
+
     //variables for dog needs
 
     var dogToys = dogOfMoment.needs.toys;
     var dogShelter = dogOfMoment.needs.shelter;
     var dogMedication = dogOfMoment.needs.medication;
     var dogFood = dogOfMoment.needs.cupsOfFood;
+    var dogPro = dogOfMoment.pronoun
 
 
 
@@ -209,7 +236,7 @@ for (var counter = 0; counter < dogArray.length; counter++) {
 
     //dog description
     var dogDescription = `<p> ${dogName} is a ${dogBreed} who is ${dogAge} years old. 
-    ${dogName} is ${dogSize} sized and a beautiful ${dogColor}.`;
+    ${dogPro} is ${dogSize} sized and a beautiful ${dogColor}.`;
 
     //best dog if statement
     if (dogId == 3) {
@@ -218,11 +245,15 @@ for (var counter = 0; counter < dogArray.length; counter++) {
         dogDescription += ` ${dogName} is a good dog.</p> `;
     }
 
+    //dogPic
+    var dogPic = `<img src=${dogUrl} width=300px>`
+
     //variables inserting dynamic 
     var dogHeader = `<h4> ${dogOfMoment.name}</h4> `;
-    dogDiv.innerHTML += `<div class=card> ${dogHeader} ${dogDescription} ${dogNeedsTable}</div> `;
+    dogDiv.innerHTML += `<div class=card> ${dogHeader} ${dogDescription} ${dogNeedsTable} ${dogPic}</div> `;
 
 
 }
 
 
+console.log(dogArray[0])
