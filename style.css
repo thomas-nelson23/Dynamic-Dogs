@@ -2,12 +2,18 @@ html {
     background-color: rgb(62, 92, 126);
 }
 
+h1 {
+    color: rgb(175, 166, 158);
+    text-align: center;
+    font-size: 5em;
+}
+
 .container {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 70%;
     padding: 30px;
-    border: 1px solid green;
+    border: 1px solid rgb(175, 166, 158);
     margin: auto;
     flex-wrap: wrap;
 }
@@ -20,19 +26,37 @@ html {
     width: 300px;
     margin: auto;
     margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10%;
+    margin-bottom: 20px;
+    border-radius: 40px;
+}
+
+.card:nth-child(even) {
+    background-color: rgb(126, 127, 201);
+}
+
+.card:nth-child(odd) {
+    background-color: rgb(160, 111, 149);
+}
+
+.card:hover {
+    box-shadow: 20px 20px 20px rgb(175, 166, 158);
+}
+
+
+div:focus {
+    background-color: red;
 }
 
 h4 {
     color: rgb(175, 166, 158);
     font-size: 2em;
+    margin-top: 0px;
 }
 
 p {
-    background-color: rgba(124, 124, 189, 0.281);
+    background-color: rgba(154, 124, 189, 0.623);
     padding: 25px;
-    border-radius: 20%;
+    border-radius: 40px;
 }
 
 
@@ -46,8 +70,6 @@ table {
     width: 250px;
     margin: auto;
     margin-top: 30px;
-    
-
 }
 
 td {
@@ -62,4 +84,8 @@ td {
 
 img {
     margin-top: 30px;
+}
+
+.head {
+    border-radius: 20px;
 }

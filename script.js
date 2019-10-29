@@ -191,12 +191,13 @@ const dogArray = [
         },
         imgFile: '/pics/goldenRetriever2.jpg',
     }
-];
+]; //end dogArray
 
-console.log(dogArray);
 
 let dogDiv = document.getElementById('dogs');
 var dogDescription = "";
+var counter = 1;
+
 
 for (var counter = 0; counter < dogArray.length; counter++) {
     dogOfMoment = dogArray[counter];
@@ -209,6 +210,7 @@ for (var counter = 0; counter < dogArray.length; counter++) {
     var dogColor = dogOfMoment.color;
     var dogAge = dogOfMoment.age;
 
+    //image location variable
     var dogUrl = dogOfMoment.imgFile;
 
     //variables for dog needs
@@ -218,6 +220,8 @@ for (var counter = 0; counter < dogArray.length; counter++) {
     var dogMedication = dogOfMoment.needs.medication;
     var dogFood = dogOfMoment.needs.cupsOfFood;
     var dogPro = dogOfMoment.pronoun
+
+
 
 
 
@@ -231,7 +235,7 @@ for (var counter = 0; counter < dogArray.length; counter++) {
     var dogNeedsTable =
         `<table class="dogTable">
 <tr><td class="dogTable" id="stats">STATS:</td><td class="dogTable">Sleeps in ${dogShelter}</td></tr>
-<td colspan="2" class="dogTable">${dogToys}</td>
+<td colspan="2" class="dogTable">Plays with: ${dogToys}</td>
 <tr><td class="dogTable">${dogMedication}</td><td class="dogTable">Eats ${dogFood} cups per day</td></tr></table>`;
 
     //dog description
@@ -248,12 +252,23 @@ for (var counter = 0; counter < dogArray.length; counter++) {
     //dogPic
     var dogPic = `<img src=${dogUrl} width=300px>`
 
+
+
     //variables inserting dynamic 
-    var dogHeader = `<h4> ${dogOfMoment.name}</h4> `;
+    var dogHeader = `<h4 class='head' id='${counter}' onClick="headerBorder(this.id)"> ${dogOfMoment.name}</h4> `;
     dogDiv.innerHTML += `<div class=card> ${dogHeader} ${dogDescription} ${dogNeedsTable} ${dogPic}</div> `;
 
 
+
+} //end for loop
+
+//card border on header click
+
+function headerBorder(thisId) {
+
+    for (var counter2 = 0; counter2 < 12; counter2++) {
+        document.getElementById(counter2).style.border = "0px solid red";
+    }
+
+    document.getElementById(thisId).style.border = "5px solid rgb(175, 166, 158)";
 }
-
-
-console.log(dogArray[0])
