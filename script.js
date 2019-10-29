@@ -262,8 +262,8 @@ for (var counter = 0; counter < dogArray.length; counter++) {
 
 } //end for loop
 
-//card border on header click
 
+//header border on header click
 function headerBorder(thisId) {
 
     for (var counter2 = 0; counter2 < 12; counter2++) {
